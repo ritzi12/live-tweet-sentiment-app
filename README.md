@@ -13,5 +13,5 @@ It also displays word cloud for corresponding sentiment.
 
 NOTE: Tweets for free twitter API can fetch only a week old tweets and not beyond it.
 
-
+### Used plotly for visualisations and wordcloud package for word cloud images .
 
