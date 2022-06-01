@@ -8,6 +8,9 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud,STOPWORDS,ImageColorGenerator   #https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud
 from PIL import Image
 import numpy as np
+#for heroku deployment to access config vars stored in environment variables
+import os
+
 """
 This file contains all modeling and visualization functions
 """
@@ -29,10 +32,16 @@ def load_transformer_model():
 
 
 def get_tweets(my_bar,Topic, Count: int, **kwargs):
-    consumer_key = config.API_KEY  # API KEY
-    consumer_secret = config.API_KEY_SECRET # API KEY SECRET
-    access_token = config.ACCESS_TOKEN
-    access_token_secret = config.ACCESS_TOKES_SECRET
+    try:
+        consumer_key = config.API_KEY  # API KEY
+        consumer_secret = config.API_KEY_SECRET # API KEY SECRET
+        access_token = config.ACCESS_TOKEN
+        access_token_secret = config.ACCESS_TOKES_SECRET
+    except Exception: #for heroku
+        consumer_key = os.environ['API_KEY']  # API KEY
+        consumer_secret = os.environ['API_KEY_SECRET'] # API KEY SECRET
+        access_token = os.environ['ACCESS_TOKEN']
+        access_token_secret = os.environ['ACCESS_TOKEN_SECRET']
 
     # Now we use above credentials to authenticate the API OAuth
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
