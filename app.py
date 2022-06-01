@@ -21,11 +21,14 @@ def main():
     if "first_time_load" not in st.session_state:
         # set the initial default value of the flag
         st.session_state.first_time_load = True
-
     html_temp = """
 	    <div style="background-image: linear-gradient(to right, mediumturquoise, gold);"><p style="color:white;font-family:Poppins, serif;font-size:40px;padding:10px;text-shadow: 2px 2px #000000">Real-time Tweet Sentiment Analysis</p></div>
 	    """
-    st.markdown(html_temp, unsafe_allow_html=True)
+    col01,col02 = st.columns([2,15])
+    with col01:
+        st.image("twitter_logo.png", width=100)
+    with col02:
+        st.markdown(html_temp, unsafe_allow_html=True)
     with st.expander(label="While the model loads ! You can go through. How to use this dashboard?"):
         st.markdown('''Using this app one can easily fetch and analyse sentiments of tweets 
                 In the *sidebar panel* one can search tweets using twitter handle of any account or hashtag/keyword.''')
