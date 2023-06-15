@@ -3,7 +3,8 @@ This is a repository of a real time tweet sentiment analysis app built using str
 
 Below is the demonstration of app for #IPL2022 hashtag.
 
-![image](https://github.com/ritzi12/live-tweet-sentiment-app/blob/master/Recording%202022-03-26%20at%2019.57.26.gif)
+![Recording 2022-03-26 at 19 57 26](https://github.com/ritzi12/live-tweet-sentiment-app/assets/80144294/6a71ffc8-8317-451c-8e17-2e53ca1162e6)
+26.gif)
 
 ## FEATURES
 This app extracts tweets from twitter apis based on input hashtag ,keyword or twitter user handle .
